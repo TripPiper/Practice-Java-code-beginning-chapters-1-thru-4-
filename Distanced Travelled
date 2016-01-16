@@ -1,0 +1,44 @@
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+
+public class DistanceTravelled 
+{
+    public static void main (String[]args) throws IOException
+    {
+        
+        
+        double distance ,speed ; // variable speed and the total for distance
+        int time ,x;    //holds user input for time and the x is used in the for loop
+        String inputT,inputS; // holds user input for time and speed
+        
+           // ask user for travel time
+           inputT=JOptionPane.showInputDialog("Enter the hours is took to reach your destination.");
+           time =Integer.parseInt(inputT);
+        
+           // ask user for speed
+           inputS=JOptionPane.showInputDialog("Enter the speed you were going in MPH .");
+           speed =Double.parseDouble(inputS);  
+          
+           // Headings for the table
+           System.out.println("Hours   Speed");
+           System.out.println("_____________");
+           
+           // loop to calculate the time
+           for (x=1 ; x<= time ; x++)
+           { 
+               distance = (x * speed);
+               System.out.println( x + "\t\t" + distance);
+              
+           }
+            
+           
+           System.exit(0);
+         
+               
+               
+               
+                  
+    }
+    
+}

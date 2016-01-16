@@ -1,0 +1,41 @@
+
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+import java.text.*;
+
+public class PenniesForPay 
+{
+    public static void main (String[]args) throws IOException
+    {    
+        int day ;
+        double pay ;
+        double total ;
+        int x ;
+        String inputDay ;
+    
+        // Formats Decimal for the double pay variable.
+        DecimalFormat formatter = new DecimalFormat("#0.00");
+       
+        // Ask user for number of days worked.
+        inputDay=JOptionPane.showInputDialog("Enter the number of days you worked.");
+        day=Integer.parseInt(inputDay);
+        
+        // Headers for table
+        System.out.println("Days         Pay");
+        System.out.println("_____________________________________");
+          
+        // Calculates pay
+           for(x=1 ; x<= day ;x++)
+           {
+                pay = (x * .01);
+               System.out.println( x + "\t\t" + "$" + formatter.format(pay));   
+           }
+             // Prints out and calculates the total
+            System.out.println( "Total for this period : " + formatter.format(total = (.01 * day)));
+           
+            // exits loops
+            System.exit(0);
+    }
+    
+}

@@ -62,6 +62,6 @@ public class HotelOccupancy
 		System.out.println("Total Rooms: " + total+ "\nOccupied(QTY): " + occupancy + 
 							"\nVacant Rooms(QTY): " + totalVacancy + "\nOccupancy Rate: " + df.format(rate) + "%");
             
-         
+          System.exit(0);
 	}
 }

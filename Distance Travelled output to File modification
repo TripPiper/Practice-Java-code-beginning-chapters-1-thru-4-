@@ -1,0 +1,51 @@
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+
+public class DistanceFileCh4N3 
+{
+    public static void main (String[]args) throws IOException
+    {
+        
+        
+        double distance ,speed ; // variable speed and the total for distance
+        int time ,x;    //holds user input for time and the x is used in the for loop
+        String inputT,inputS; // holds user input for time and speed
+        String fileName ; // Holds file's name
+       
+        
+             // Create Scanner object for keyboard input
+             Scanner keyboard =new Scanner (System.in);
+
+
+
+           // ask user for travel time
+           inputT=JOptionPane.showInputDialog("Enter the hours is took to reach your destination.");
+           time =Integer.parseInt(inputT);
+           
+           // ask user for speed
+           inputS=JOptionPane.showInputDialog("Enter the speed you were going in MPH .");
+           speed =Double.parseDouble(inputS); 
+           
+           // Get File name
+           System.out.println("Enter the File's name. ");
+           fileName = keyboard.nextLine();
+           PrintWriter outputFile1 =new PrintWriter(fileName);
+           
+           
+           // Headings for the table
+           outputFile1.println("Hours   Speed");
+           outputFile1.println("_________________");
+           
+            // loop to calculate the time
+           for (x=1 ; x<= time ; x++)
+           { 
+               distance = (x * speed);
+               outputFile1.println( x + "\t\t" + distance);
+               
+           }
+            //Close the file.   
+            outputFile1.close();
+    }
+}
+  

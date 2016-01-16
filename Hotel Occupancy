@@ -1,0 +1,67 @@
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
+
+public class HotelOccupancy 
+{
+   public static void main(String[] args) throws IOException
+        {
+         
+         double floors=0.0 ,rooms=0.0 ,occupancy =0.0;       // Variables for rooms and floors
+          String inputR,inputF, inputO;   // holds user input for rooms and floors
+          double total=0.0 ,totalVacancy=0.0;
+          double rate = 0.0 ;
+        
+        
+           // Enter the number of floors
+           inputF=JOptionPane.showInputDialog("Enter the number of floors.");
+           floors =Double.parseDouble(inputF);
+           
+           // Input validation: Floor count > 1
+		while(floors < 1){
+			System.out.print("Invalid Input. Enter a number of floors greater than 0: ");
+			floors = Double.parseDouble(inputF);
+                }
+           
+          
+               // Makes Calculations
+            for (int x=1 ; x <= floors; x++)
+            { 
+               inputR=JOptionPane.showInputDialog("Enter the number of rooms.");
+               rooms =Double.parseDouble(inputR);
+               
+               // input validation for rooms
+               while(rooms < 10)
+               { inputR=JOptionPane.showInputDialog("Invalid input. Enter a number of rooms greater than 9");
+               rooms =Double.parseDouble(inputR);}
+               
+               // input for occuapancy
+               inputO=JOptionPane.showInputDialog( "How many of those rooms are occupied ?");
+               occupancy =Double.parseDouble(inputO);
+            }
+               
+            
+        
+           // System.out.println(total); 
+            
+            total = (rooms * floors);
+            totalVacancy =(total - occupancy);     
+            rate =(occupancy /total);
+             
+            
+           // Decimal formating 
+		  NumberFormat df = DecimalFormat.getInstance();
+		  df.setMaximumFractionDigits(2);
+		
+		
+		
+		// Display Hotel Occupancy data
+		System.out.println("Total Rooms: " + total+ "\nOccupied(QTY): " + occupancy + 
+							"\nVacant Rooms(QTY): " + totalVacancy + "\nOccupancy Rate: " + df.format(rate) + "%");
+            
+         
+	}
+}

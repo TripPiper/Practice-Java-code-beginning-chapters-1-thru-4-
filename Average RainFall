@@ -1,0 +1,61 @@
+
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+import java.text.*;
+
+
+
+public class AverageRainfall 
+{
+    public static void main(String[] args) throws IOException
+        {
+            double averageRainfall = 0.0;
+            double numberOfYears = 0.0 ;
+            double inchesOfRainfall =0.0 ;
+            String inputR ,inputY ;
+           double y=12, totalMonths =0 ;
+             double totalRain = 0 ;
+             int x =0 ,month =0;
+            // Enter the number of years // Input validation: year count > 1
+            
+            inputY=JOptionPane.showInputDialog("Enter the number of years greater the 0. ");
+			numberOfYears = Double.parseDouble(inputY);
+            
+            
+           while(numberOfYears < 1){
+            inputY=JOptionPane.showInputDialog("Invalid Input. Enter a number "
+                                + "of years greater than 0: ");
+            numberOfYears =Double.parseDouble(inputY); }
+           
+                   for( x = 1 ; x <= numberOfYears ; x++ )
+                        {
+                            
+                            for( month = 1; month <= 12 ; month ++ ) 
+                         { 
+                             
+                             inputR = JOptionPane.showInputDialog("Enter the "
+                                    + "amount of rainfall in "
+                                    + "inches for year number " + x + " and the month number : " + (month ));
+                              inchesOfRainfall = Double.parseDouble(inputR); 
+                            
+                            //Input validation: year count > 1
+                              while(inchesOfRainfall < 0 )
+                      { inputR = JOptionPane.showInputDialog("Invalid Input. Enter amount of "
+                                + "rainfall can not be negative.: ");
+			inchesOfRainfall= Double.parseDouble(inputR);} 
+                          
+                              totalMonths = (month * numberOfYears) ;
+                              totalRain += inchesOfRainfall;      
+                              averageRainfall = ( totalRain /(month * numberOfYears)); 
+                         }
+                        }
+                   
+                             JOptionPane.showMessageDialog(null, " The number of months : " + (totalMonths) + " Total inches of rainfall in " + totalMonths  + " months : "  
+                                     + totalRain + 
+                                      "  The average rainfall for " + totalMonths + " months :" +  averageRainfall );
+                             
+                             System.exit(0);
+        }
+}
+    

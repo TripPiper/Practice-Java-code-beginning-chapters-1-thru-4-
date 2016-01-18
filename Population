@@ -68,7 +68,7 @@ public class Population
                 + x + " the size of the population is " + newdailyIncrease  );
                
                System.out.println(" At the end of day " 
-                + x + " the size of the population is " + newdailyIncrease  );
+                + x + " the size of the population is " +  formatter.format(newdailyIncrease)  );
                }
                
                  

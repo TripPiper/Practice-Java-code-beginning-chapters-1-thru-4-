@@ -1,8 +1,23 @@
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package chapter4programmingchallenge;
+
+/**
+ *
+ * @author Me3
+ */
+
+    
+    
 import java.util.*;
 import javax .swing.*;
 import java.io.*;
 import java.text.*;
+
 
 
 
@@ -17,6 +32,9 @@ public class AverageRainfall
            double y=12, totalMonths =0 ;
              double totalRain = 0 ;
              int x =0 ,month =0;
+             //create a decimal formatter
+             DecimalFormat formatter =new DecimalFormat(" # 0.00 ");
+             
             // Enter the number of years // Input validation: year count > 1
             
             inputY=JOptionPane.showInputDialog("Enter the number of years greater the 0. ");
@@ -53,9 +71,9 @@ public class AverageRainfall
                    
                              JOptionPane.showMessageDialog(null, " The number of months : " + (totalMonths) + " Total inches of rainfall in " + totalMonths  + " months : "  
                                      + totalRain + 
-                                      "  The average rainfall for " + totalMonths + " months :" +  averageRainfall );
+                                      "  The average rainfall for " + totalMonths + " months :" + formatter.format(averageRainfall) );
                              
                              System.exit(0);
         }
 }
-    
+  

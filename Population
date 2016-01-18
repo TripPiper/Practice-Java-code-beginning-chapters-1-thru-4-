@@ -1,0 +1,80 @@
+import java.io.IOException;
+import java.util.*;
+import javax .swing.*;
+import java.io.*;
+import java.text.*;
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Tutor
+ */
+public class Population 
+{
+    public static void main(String[] args) throws IOException
+        {
+            double  numberOfDays=0;   // Holds number of days
+            double dailyIncrease = 0,organism =0 ; // Holds increase rate, size of population 
+            String inputO ,inputN, inputD ;
+            int x=0; // Used in loop intialize, update and argument.
+            double newdailyIncrease =0; // The Accummualtor
+            double e =2.71828; // used to calculate population growth
+                
+                        // Takes input beginning population
+            inputO=JOptionPane.showInputDialog("Enter beginning number of organism. ");
+			organism  = Double.parseDouble(inputO);
+                        
+                        while (organism < 2)
+                        {  inputO=JOptionPane.showInputDialog(" Invalid entry. Enter beginning number "
+                                + "of organism population that is greater than 2. ");
+			organism  = Double.parseDouble(inputO);}
+                        
+                         // Takes input for the rate of increase
+            inputD=JOptionPane.showInputDialog(" Enter an average daily population"
+                                + " increase that is not a negative number.");
+			dailyIncrease  = Double.parseDouble(inputD);
+                        
+                        while (dailyIncrease < 0)
+                        {  inputO=JOptionPane.showInputDialog("Invalid entry. Re-enter an average daily population"
+                                + " increase that is not a negative number.");
+			dailyIncrease  = Double.parseDouble(inputD);}  
+            
+                        // Takes input for the number of days
+             inputN = JOptionPane.showInputDialog(" Enter the number of days the population "
+                                + "is  allowed to grow that are greater than 1." );
+			numberOfDays = Double.parseDouble(inputN);
+                        
+                        while (numberOfDays  < 1)
+                        {  inputN=JOptionPane.showInputDialog("Invalid entry."
+                                + " Re-enter the number of days the population "
+                                + "is  allowed to grow, that are greater than 1. ");
+			numberOfDays  = Double.parseDouble(inputN);}   
+                        
+            
+           
+             
+              // Loop will calculate and output the daily value of the population increase        
+               for ( x=1 ; x<= numberOfDays ; x++){
+                    newdailyIncrease += (organism*Math.pow(e , (x*dailyIncrease)));
+                JOptionPane.showMessageDialog(null," At the end of day " 
+                + x + " the size of the population is " + newdailyIncrease  );
+               
+               System.out.println(" At the end of day " 
+                + x + " the size of the population is " + newdailyIncrease  );
+               }
+               
+                 
+               
+               System.exit(0);
+            
+            
+        }
+    
+    
+}

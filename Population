@@ -29,7 +29,7 @@ public class Population
                         // Takes input beginning population
             inputO=JOptionPane.showInputDialog("Enter beginning number of organism. ");
 			organism  = Double.parseDouble(inputO);
-                        
+                         // validates inputO
                         while (organism < 2)
                         {  inputO=JOptionPane.showInputDialog(" Invalid entry. Enter beginning number "
                                 + "of organism population that is greater than 2. ");
@@ -39,7 +39,9 @@ public class Population
             inputD=JOptionPane.showInputDialog(" Enter an average daily population"
                                 + " increase that is not a negative number.");
 			dailyIncrease  = Double.parseDouble(inputD);
-                        
+                         // converted increase rate to percent
+                        rate =(dailyIncrease/100);
+                        // validates inputD
                         while (dailyIncrease < 0)
                         {  inputO=JOptionPane.showInputDialog("Invalid entry. Re-enter an average daily population"
                                 + " increase that is not a negative number.");
@@ -49,7 +51,7 @@ public class Population
              inputN = JOptionPane.showInputDialog(" Enter the number of days the population "
                                 + "is  allowed to grow that are greater than 1." );
 			numberOfDays = Double.parseDouble(inputN);
-                        
+                         // validates inputN
                         while (numberOfDays  < 1)
                         {  inputN=JOptionPane.showInputDialog("Invalid entry."
                                 + " Re-enter the number of days the population "
@@ -61,7 +63,7 @@ public class Population
              
               // Loop will calculate and output the daily value of the population increase        
                for ( x=1 ; x<= numberOfDays ; x++){
-                    newdailyIncrease += (organism*Math.pow(e , (x*dailyIncrease)));
+                    newdailyIncrease += (organism*Math.pow(e , (x*rate)));
                 JOptionPane.showMessageDialog(null," At the end of day " 
                 + x + " the size of the population is " + newdailyIncrease  );
                

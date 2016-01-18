@@ -25,8 +25,11 @@ public class Population
             int x=0; // Used in loop intialize, update and argument.
             double newdailyIncrease =0; // The Accummualtor
             double e =2.71828; // used to calculate population growth
+            
+             //create a decimal formatter
+             DecimalFormat formatter =new DecimalFormat(" # 0.00 ");
                 
-                        // Takes input beginning population
+            // Takes input beginning population
             inputO=JOptionPane.showInputDialog("Enter beginning number of organism. ");
 			organism  = Double.parseDouble(inputO);
                          // validates inputO
@@ -35,7 +38,7 @@ public class Population
                                 + "of organism population that is greater than 2. ");
 			organism  = Double.parseDouble(inputO);}
                         
-                         // Takes input for the rate of increase
+            // Takes input for the rate of increase
             inputD=JOptionPane.showInputDialog(" Enter an average daily population"
                                 + " increase that is not a negative number.");
 			dailyIncrease  = Double.parseDouble(inputD);
@@ -47,7 +50,7 @@ public class Population
                                 + " increase that is not a negative number.");
 			dailyIncrease  = Double.parseDouble(inputD);}  
             
-                        // Takes input for the number of days
+             // Takes input for the number of days
              inputN = JOptionPane.showInputDialog(" Enter the number of days the population "
                                 + "is  allowed to grow that are greater than 1." );
 			numberOfDays = Double.parseDouble(inputN);

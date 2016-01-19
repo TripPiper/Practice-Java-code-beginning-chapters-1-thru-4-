@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+   public class LargestAndSmallest {
+       public static void main(String [] args) {
+	         // creates the scanner
+            Scanner input = new Scanner(System.in);
+	    int number =0 ;
+	    int min=0;
+	    int max=0;
+          		
+
+
+
+			System.out.println("Enter an integer ( press -99 to quit)");
+			 number = input.nextInt();
+			 min=number;
+			 max=number;
+          		
+			while (number != -1){
+			  if ( number > max) {
+			     max = number;
+				 }
+			else if ( number < min) {
+			    min = number;
+			     } 	 
+			  System.out.println("Enter an integer ( press -99 to quit)");
+			    number = input.nextInt();
+			 }
+			  System.out.println("The max is: "+max);
+                          System.out.println("the min is: "+min);			  
+	            
+	}
+}
